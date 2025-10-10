@@ -1,0 +1,21 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+# SPA routing: serve index.html for all non-static routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Optional: caching headers
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Ensure the service worker can update promptly
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
