@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Trash2, Plus, StickyNote, Download, Sparkles, X } from "lucide-react";
 
+import NotificationHandler from './components/NotificationHandler';
+
 function App() {
   const [notes, setNotes] = useState([]);
   const [input, setInput] = useState("");
@@ -84,6 +86,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 p-4 sm:p-8">
+      <NotificationHandler />
       {/* Install Banner */}
       {showInstallBanner && !isInstalled && (
         <div className="fixed top-4 right-4 z-50 animate-slide-down">

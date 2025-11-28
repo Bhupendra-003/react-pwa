@@ -37,7 +37,8 @@ export default defineConfig({
       ],
       categories: ['productivity', 'utilities'],
       lang: 'en',
-      dir: 'ltr'
+      dir: 'ltr',
+      gcm_sender_id: "103953800507"
     },
 
     workbox: {
